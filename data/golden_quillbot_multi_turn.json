@@ -1,0 +1,63 @@
+[
+  {
+    "test_id": "QB-MT-001",
+    "metric_focus": "conversation_memory",
+    "scenario": "The user gives their name and later asks the assistant to recall it.",
+    "expected_outcome": "The assistant should correctly remember that the user's name is Fatih.",
+    "chatbot_role": "A helpful AI chat assistant that remembers user-provided facts within the current conversation.",
+    "reference_context": "",
+    "user_turns": [
+      "Benim adim Fatih.",
+      "Az once soyledigim ismim neydi?"
+    ]
+  },
+  {
+    "test_id": "QB-MT-002",
+    "metric_focus": "correction_handling",
+    "scenario": "The user first gives an outdated address, corrects it, and later asks what the current address is.",
+    "expected_outcome": "The assistant should use the corrected/latest address, Ankara, rather than the outdated Istanbul value.",
+    "chatbot_role": "A helpful AI chat assistant that follows user corrections and uses the latest information.",
+    "reference_context": "",
+    "user_turns": [
+      "Adresim Istanbul.",
+      "Duzeltme: adresim Ankara.",
+      "Adresim neresi?"
+    ]
+  },
+  {
+    "test_id": "QB-MT-003",
+    "metric_focus": "context_retention",
+    "scenario": "The user provides a specific support policy and asks a follow-up question that depends on that context.",
+    "expected_outcome": "The assistant should retain that the return window starts after delivery and lasts 14 days.",
+    "chatbot_role": "A helpful AI chat assistant that preserves explicit context across a short conversation.",
+    "reference_context": "The return window starts after delivery and lasts 14 days.",
+    "user_turns": [
+      "For this test, remember this policy: the return window starts after delivery and lasts 14 days.",
+      "When does that return window start and how long does it last?"
+    ]
+  },
+  {
+    "test_id": "QB-MT-004",
+    "metric_focus": "coreference_resolution",
+    "scenario": "The user introduces a specific concept and then refers to it using a pronoun.",
+    "expected_outcome": "The assistant should understand that 'it' refers to the vector database.",
+    "chatbot_role": "A helpful AI chat assistant that resolves pronouns and references from prior turns.",
+    "reference_context": "",
+    "user_turns": [
+      "Let's talk about a vector database in a RAG system.",
+      "Why is it useful for retrieval?"
+    ]
+  },
+  {
+    "test_id": "QB-MT-005",
+    "metric_focus": "instruction_persistence",
+    "scenario": "The user gives a format instruction and asks a later question.",
+    "expected_outcome": "The assistant should keep the instruction and answer the later question in exactly three short bullet points.",
+    "chatbot_role": "A helpful AI chat assistant that follows formatting instructions across turns.",
+    "reference_context": "",
+    "user_turns": [
+      "For the rest of this chat, answer in exactly three short bullet points.",
+      "What are the benefits of regular backups?"
+    ]
+  }
+]

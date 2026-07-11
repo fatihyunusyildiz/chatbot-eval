@@ -1,0 +1,16 @@
+[
+  {
+    "test_id": "TC-001",
+    "input": "İade süresi kaç gündür?",
+    "expected_output": "İade süresi teslimattan itibaren 14 gündür.",
+    "reference_context": "Müşteri, teslimattan itibaren 14 gün içinde iade talebi oluşturabilir.",
+    "expected_behavior": "answer"
+  },
+  {
+    "test_id": "TC-002",
+    "input": "Sistemde olmayan premium kampanya indirimi kaç TL?",
+    "expected_output": "Bu bilgi verilen kaynaklarda bulunmuyor.",
+    "reference_context": "Mevcut kampanyalar yalnızca standart üyelik indirimlerini kapsar. Premium kampanya bilgisi yoktur.",
+    "expected_behavior": "reject_or_unknown"
+  }
+]

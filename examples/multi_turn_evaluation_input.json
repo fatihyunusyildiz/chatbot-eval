@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "suite_type": "multi_turn",
+  "test_id": "MT-005",
+  "metric_focus": "correction_handling",
+  "scenario": "Kullanıcı önce yanlış bilgi verir, sonra düzeltir.",
+  "expected_outcome": "Assistant, eski İstanbul bilgisini değil Ankara bilgisini kullanmalıdır.",
+  "chatbot_role": "Kullanıcı düzeltmelerini dikkate alan asistan.",
+  "reference_context": "",
+  "turns": [
+    {
+      "role": "user",
+      "content": "Adresim İstanbul."
+    },
+    {
+      "role": "assistant",
+      "content": "Adresinizi İstanbul olarak not aldım."
+    },
+    {
+      "role": "user",
+      "content": "Düzeltme: adresim Ankara."
+    },
+    {
+      "role": "assistant",
+      "content": "Adresiniz Ankara olarak güncellendi."
+    },
+    {
+      "role": "user",
+      "content": "Adresim neresi?"
+    },
+    {
+      "role": "assistant",
+      "content": "Adresiniz Ankara."
+    }
+  ]
+}

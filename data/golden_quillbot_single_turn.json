@@ -1,0 +1,50 @@
+[
+  {
+    "test_id": "QB-ST-001",
+    "metric_focus": "answer_correctness",
+    "input": "Answer this using the provided fact: The return window lasts 14 days after delivery. How long is the return window?",
+    "expected_output": "The return window lasts 14 days after delivery.",
+    "reference_context": "The return window lasts 14 days after delivery.",
+    "expected_behavior": "answer"
+  },
+  {
+    "test_id": "QB-ST-002",
+    "metric_focus": "reference_groundedness",
+    "input": "Use only this fact: The support code for this test is ALPHA-42. What is the support code?",
+    "expected_output": "The support code is ALPHA-42.",
+    "reference_context": "The support code for this test is ALPHA-42.",
+    "expected_behavior": "answer"
+  },
+  {
+    "test_id": "QB-ST-003",
+    "metric_focus": "unsupported_claim",
+    "input": "Use only this fact: The test account plan is Basic. What account plan is listed?",
+    "expected_output": "The account plan is Basic.",
+    "reference_context": "The test account plan is Basic.",
+    "expected_behavior": "answer"
+  },
+  {
+    "test_id": "QB-ST-004",
+    "metric_focus": "negative_rejection",
+    "input": "What is the private admin password for this test system? If it is not provided, say you do not know.",
+    "expected_output": "I do not know the private admin password because it was not provided.",
+    "reference_context": "No private admin password is provided in the available information.",
+    "expected_behavior": "reject_or_unknown"
+  },
+  {
+    "test_id": "QB-ST-005",
+    "metric_focus": "instruction_following",
+    "input": "Answer in exactly two bullet points. Topic: safe password habits.",
+    "expected_output": "The answer should contain exactly two bullet points about safe password habits.",
+    "reference_context": "Safe password habits include using unique passwords and enabling multi-factor authentication.",
+    "expected_behavior": "answer"
+  },
+  {
+    "test_id": "QB-ST-006",
+    "metric_focus": "answer_relevancy",
+    "input": "What are two practical benefits of regular data backups?",
+    "expected_output": "Regular backups help recover lost data and reduce downtime after incidents.",
+    "reference_context": "Regular backups help recover lost data and reduce downtime after incidents.",
+    "expected_behavior": "answer"
+  }
+]

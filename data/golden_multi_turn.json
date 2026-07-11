@@ -1,0 +1,185 @@
+[
+  {
+    "test_id": "MT-001",
+    "metric_focus": "conversation_memory",
+    "scenario": "Kullanıcı önce kendi adını verir, sonra chatbot'un bunu hatırlamasını ister.",
+    "expected_outcome": "Assistant, kullanıcının adının Fatih olduğunu doğru hatırlamalıdır.",
+    "chatbot_role": "Kullanıcı bilgilerini konuşma boyunca hatırlayan yardımcı müşteri destek asistanı.",
+    "reference_context": "",
+    "user_turns": [
+      "Benim adım Fatih.",
+      "Az önce söylediğim ismim neydi?"
+    ]
+  },
+  {
+    "test_id": "MT-002",
+    "metric_focus": "context_retention",
+    "scenario": "Kullanıcı iade süresi bilgisini verir, sonra bu sürenin başlangıç noktasını sorar.",
+    "expected_outcome": "Assistant, iade süresinin teslimattan itibaren başladığını doğru söylemelidir.",
+    "chatbot_role": "Konuşma bağlamını koruyan ve önceki bilgileri sonraki cevaplarda kullanan destek asistanı.",
+    "reference_context": "İade süresi teslimattan itibaren 14 gündür.",
+    "user_turns": [
+      "İade süresi teslimattan itibaren 14 gündür.",
+      "Bu süre ne zaman başlar?"
+    ]
+  },
+  {
+    "test_id": "MT-003",
+    "metric_focus": "coreference_resolution",
+    "scenario": "Kullanıcı önce bir konu belirtir, sonra 'bu' ifadesiyle aynı konuya referans verir.",
+    "expected_outcome": "Assistant, 'bu' ifadesinin RAG sistemine referans verdiğini anlamalıdır.",
+    "chatbot_role": "Önceki konuşmalardaki zamir ve referansları doğru çözen teknik destek asistanı.",
+    "reference_context": "",
+    "user_turns": [
+      "RAG sistemi hakkında konuşalım.",
+      "Bu hangi durumlarda kullanılır?"
+    ]
+  },
+  {
+    "test_id": "MT-004",
+    "metric_focus": "instruction_persistence",
+    "scenario": "Kullanıcı cevapların kısa ve madde madde olmasını ister, sonra teknik soru sorar.",
+    "expected_outcome": "Assistant, sonraki cevapta kısa ve madde madde formatını korumalıdır.",
+    "chatbot_role": "Kullanıcı talimatlarını konuşma boyunca sürdüren yardımcı asistan.",
+    "reference_context": "",
+    "user_turns": [
+      "Bundan sonra kısa ve madde madde cevap ver.",
+      "RAG nedir?"
+    ]
+  },
+  {
+    "test_id": "MT-005",
+    "metric_focus": "correction_handling",
+    "scenario": "Kullanıcı önce yanlış bilgi verir, sonra düzeltir. Assistant en güncel bilgiyi kullanmalıdır.",
+    "expected_outcome": "Assistant, eski İstanbul bilgisini değil, düzeltilmiş Ankara bilgisini doğru kabul etmelidir.",
+    "chatbot_role": "Kullanıcı düzeltmelerini dikkate alan ve en güncel bilgiyi kullanan asistan.",
+    "reference_context": "",
+    "user_turns": [
+      "Adresim İstanbul.",
+      "Düzeltme: adresim Ankara.",
+      "Adresim neresi?"
+    ]
+  },
+  {
+    "test_id": "MT-006",
+    "metric_focus": "conversation_memory",
+    "scenario": "Kullanıcı sevdiği içeceği belirtir, sonra chatbot'un bunu hatırlamasını ister.",
+    "expected_outcome": "Assistant, kullanıcının sevdiği içeceğin Türk kahvesi olduğunu doğru hatırlamalıdır.",
+    "chatbot_role": "Kullanıcı tercihlerini konuşma boyunca hatırlayan yardımcı asistan.",
+    "reference_context": "",
+    "user_turns": [
+      "En sevdiğim içecek Türk kahvesi.",
+      "Benim en sevdiğim içecek neydi?"
+    ]
+  },
+  {
+    "test_id": "MT-007",
+    "metric_focus": "conversation_memory",
+    "scenario": "Kullanıcı çalıştığı departmanı belirtir, sonra chatbot'un bunu hatırlamasını ister.",
+    "expected_outcome": "Assistant, kullanıcının Yazılım Test ekibinde çalıştığını doğru hatırlamalıdır.",
+    "chatbot_role": "Kullanıcının konuşma içinde verdiği bilgileri hatırlayan destek asistanı.",
+    "reference_context": "",
+    "user_turns": [
+      "Ben Yazılım Test ekibinde çalışıyorum.",
+      "Hangi ekipte çalıştığımı söylemiştim?"
+    ]
+  },
+  {
+    "test_id": "MT-008",
+    "metric_focus": "context_retention",
+    "scenario": "Kullanıcı teslimat ücretinin sepet tutarına bağlı olduğunu söyler, sonra bu koşulu sorar.",
+    "expected_outcome": "Assistant, ücretsiz teslimatın 500 TL ve üzeri siparişlerde geçerli olduğunu doğru söylemelidir.",
+    "chatbot_role": "Önceki konuşma bağlamını koruyan ve koşullu bilgileri doğru kullanan destek asistanı.",
+    "reference_context": "500 TL ve üzeri siparişlerde teslimat ücretsizdir.",
+    "user_turns": [
+      "500 TL ve üzeri siparişlerde teslimat ücretsizdir.",
+      "Ücretsiz teslimat hangi durumda geçerli?"
+    ]
+  },
+  {
+    "test_id": "MT-009",
+    "metric_focus": "context_retention",
+    "scenario": "Kullanıcı garanti süresinin fatura tarihinden itibaren başladığını söyler, sonra başlangıç noktasını sorar.",
+    "expected_outcome": "Assistant, garanti süresinin fatura tarihinden itibaren başladığını doğru söylemelidir.",
+    "chatbot_role": "Konuşma içindeki koşul, süre ve başlangıç bilgilerini doğru koruyan destek asistanı.",
+    "reference_context": "Garanti süresi fatura tarihinden itibaren 2 yıldır.",
+    "user_turns": [
+      "Garanti süresi fatura tarihinden itibaren 2 yıldır.",
+      "Bu garanti süresi ne zaman başlar?"
+    ]
+  },
+  {
+    "test_id": "MT-010",
+    "metric_focus": "coreference_resolution",
+    "scenario": "Kullanıcı önce 'vektör veritabanı' konusunu belirtir, sonra 'bu' ifadesiyle aynı konuya referans verir.",
+    "expected_outcome": "Assistant, 'bu' ifadesinin vektör veritabanına referans verdiğini anlamalıdır.",
+    "chatbot_role": "Önceki konuşmalardaki teknik kavramlara yapılan referansları doğru çözen teknik destek asistanı.",
+    "reference_context": "",
+    "user_turns": [
+      "Vektör veritabanı hakkında konuşalım.",
+      "Bu RAG sistemlerinde neden kullanılır?"
+    ]
+  },
+  {
+    "test_id": "MT-011",
+    "metric_focus": "coreference_resolution",
+    "scenario": "Kullanıcı önce embedding modelinden bahseder, sonra 'o' zamiriyle aynı kavrama referans verir.",
+    "expected_outcome": "Assistant, 'o' ifadesinin embedding modeline referans verdiğini anlamalıdır.",
+    "chatbot_role": "Zamir ve önceki kavram referanslarını doğru çözen teknik asistan.",
+    "reference_context": "",
+    "user_turns": [
+      "Embedding modeli metinleri sayısal vektörlere dönüştürür.",
+      "O neden arama kalitesini etkiler?"
+    ]
+  },
+  {
+    "test_id": "MT-012",
+    "metric_focus": "instruction_persistence",
+    "scenario": "Kullanıcı bundan sonra cevapların tek cümle olmasını ister, sonra teknik bir soru sorar.",
+    "expected_outcome": "Assistant, sonraki cevabında tek cümlelik kısa bir yanıt vermelidir.",
+    "chatbot_role": "Kullanıcı format ve uzunluk talimatlarını konuşma boyunca sürdüren yardımcı asistan.",
+    "reference_context": "",
+    "user_turns": [
+      "Bundan sonra cevaplarını tek cümleyle ver.",
+      "LLM nedir?"
+    ]
+  },
+  {
+    "test_id": "MT-013",
+    "metric_focus": "instruction_persistence",
+    "scenario": "Kullanıcı cevapların sadece üç madde olmasını ister, sonra açıklama ister.",
+    "expected_outcome": "Assistant, sonraki cevabında tam olarak üç madde kullanmalı ve format talimatını korumalıdır.",
+    "chatbot_role": "Kullanıcının biçimsel talimatlarını sonraki cevaplarda sürdüren yardımcı asistan.",
+    "reference_context": "",
+    "user_turns": [
+      "Bundan sonra cevaplarını sadece üç madde halinde ver.",
+      "RAG sisteminin avantajları nelerdir?"
+    ]
+  },
+  {
+    "test_id": "MT-014",
+    "metric_focus": "correction_handling",
+    "scenario": "Kullanıcı önce yanlış teslimat şehri verir, sonra düzeltir. Assistant en güncel şehri kullanmalıdır.",
+    "expected_outcome": "Assistant, eski İzmir bilgisini değil, düzeltilmiş Bursa bilgisini doğru kabul etmelidir.",
+    "chatbot_role": "Kullanıcı düzeltmelerini dikkate alan ve en güncel bilgiyi kullanan destek asistanı.",
+    "reference_context": "",
+    "user_turns": [
+      "Teslimat şehrim İzmir.",
+      "Düzeltme: teslimat şehrim Bursa.",
+      "Teslimat şehrim neresi?"
+    ]
+  },
+  {
+    "test_id": "MT-015",
+    "metric_focus": "correction_handling",
+    "scenario": "Kullanıcı önce yanlış ürün rengini belirtir, sonra düzeltir. Assistant düzeltilmiş rengi kullanmalıdır.",
+    "expected_outcome": "Assistant, eski siyah bilgisini değil, düzeltilmiş beyaz bilgisini doğru kabul etmelidir.",
+    "chatbot_role": "Konuşma içinde yapılan düzeltmeleri önceliklendiren ve en güncel bilgiyi kullanan asistan.",
+    "reference_context": "",
+    "user_turns": [
+      "Seçtiğim ürün rengi siyah.",
+      "Düzeltme: ürün rengini beyaz olarak seçtim.",
+      "Hangi rengi seçtim?"
+    ]
+  }
+]

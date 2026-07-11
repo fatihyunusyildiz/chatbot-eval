@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "suite_type": "single_turn",
+  "test_id": "TC-001",
+  "input": "İade süresi kaç gündür?",
+  "actual_output": "İade süresi teslimattan itibaren 14 gündür.",
+  "expected_output": "İade süresi teslimattan itibaren 14 gündür.",
+  "reference_context": "Müşteri, teslimattan itibaren 14 gün içinde iade talebi oluşturabilir.",
+  "expected_behavior": "answer"
+}
